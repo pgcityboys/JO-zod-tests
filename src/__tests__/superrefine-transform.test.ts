@@ -21,7 +21,7 @@ test("transform + superrefine", () => {
   const c = {name: "aktyw"};
 
   expect(schema.safeParse(a)).toBeTruthy()
-  expect(schema.safeParse(b)).toBeTruthy()
+  expect(schema.safeParse(b)).toBeFalsy()
   expect(schema.safeParse(c)).toBeFalsy()
 
 })
