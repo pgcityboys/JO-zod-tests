@@ -107,3 +107,6 @@ type tmp6 = z.infer<typeof tmp5>
 const tmp7: tmp6 = {};
 
 //Test case 12
+const url = "amqp://guest@guest/local";
+const schema = z.string().url();
+console.log(schema.safeParse(url))
