@@ -94,3 +94,6 @@ testDates.forEach((date) => {
 //Test case 11
 
 //Test case 12
+const url = "amqp://guest@guest/local";
+const schema = z.string().url();
+console.log(schema.safeParse(url))
