@@ -92,5 +92,18 @@ testDates.forEach((date) => {
 });
 
 //Test case 11
+console.log("---CASE 11---");
+const s11 = z.object({
+    user: z.object({
+        role: z.object({
+            name: z.string()
+        }),
+        login: z.string()
+    }),
+    message: z.string()
+})
+const tmp5 = s11.deepPartial();
+type tmp6 = z.infer<typeof tmp5>
+const tmp7: tmp6 = {};
 
 //Test case 12

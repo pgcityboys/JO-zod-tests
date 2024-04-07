@@ -4,6 +4,14 @@ const test = Deno.test;
 
 import * as z from "../index.ts";
 
+test("email without exclamation mark", () => {
+  const schema = z.string().email();
+
+  const emailWithoutExclamation = "test@mail.com";
+
+  expect(schema.safeParse(emailWithoutExclamation).success).toBe(true);
+});
+
 test("email with exclamation mark", () => {
   const schema = z.string().email();
 
