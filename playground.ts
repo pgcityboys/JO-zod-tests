@@ -52,4 +52,15 @@ console.log("---CASE 6---");
 const s6 = z.record(z.any());
 console.log(s6.parse({tmp3: undefined}));
 
+// Test case 7
+console.log("---CASE 7---");
+const s7 = z.string().ip();
+console.log(s7.parse("ff06::3:0:c3"));
+
+// Test case 9
+console.log("---CASE 9---");
+function tmp4() {}
+const s9 = z.string();
+console.log(s9.safeParse(tmp4));
+
 z;
