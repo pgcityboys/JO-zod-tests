@@ -74,6 +74,22 @@ const s9 = z.string();
 console.log(s9.safeParse(tmp4));
 
 //Test case 10
+console.log("---CASE 10---");
+const minDate = new Date("2022-01-01");
+const maxDate = new Date("2022-12-31");
+const schema = z.date().min(minDate).max(maxDate);
+const testDates = [
+  new Date("2021-12-31"),
+  new Date("2023-01-01"),
+  new Date("2022-06-15"),
+];
+testDates.forEach((date) => {
+  try {
+    console.log("Successfully parsed date: " + schema.parse(date));
+  } catch {
+    console.log("Error with parsed date: " + date);
+  }
+});
 
 //Test case 11
 
